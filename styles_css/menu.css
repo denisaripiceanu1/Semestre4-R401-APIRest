@@ -1,0 +1,105 @@
+/* Styles généraux du menu */
+nav {
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+section {
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#menu {
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Aligner les rubriques à gauche */
+    flex-grow: 1; /* Permet au menu de prendre tout l'espace disponible */
+}
+
+#menuToggle {
+    cursor: pointer;
+    display: block;
+    padding: 10px;
+    color: #333;
+}
+
+#menu > li {
+    display: inline-block;
+    position: relative;
+    margin-right: 50px; /* Espacement entre les rubriques */
+}
+
+#menu a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+#menu a:hover {
+    background-color: #4d5257;
+}
+
+#menu li ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#menu li:hover ul {
+    max-height: 13em;
+}
+
+#menu > li li {
+    background: #444;
+}
+
+#menu > li li a {
+    color: #ffffff;
+    padding: 15px 20px;
+    display: block;
+}
+
+#menu > li li:hover {
+    background: #666;
+}
+
+#menu img {
+    margin-right: 10px;
+    margin-top: -10px;
+    margin-bottom: -10px;
+}
+
+/* Styles pour le bouton de déconnexion */
+#menu .deconnexion a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    background-color: #0097b2;
+}
+
+#menu .deconnexion a:hover {
+    background-color: #176d7c;
+}
+
+#menu .deconnexion a:before {
+    font-family: 'FontAwesome';
+    margin-right: 8px;
+}

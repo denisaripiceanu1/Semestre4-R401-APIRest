@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Usagers</title>
+    <link rel="stylesheet" type="text/css" href="/styles_css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/styles_css/menu.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul id="menu">
+            <li><a href="../index.html"><img src="/image/logo_projet-php.png" alt="Logo Projet PHP" width="125" height="125"></a></li>
+            <li><a href="affichageStatistiques.html">Statistiques</a></li>
+            <li><a href="affichageRendezVous.html">Rendez-vous</a></li>
+            <li><a href="affichageMedecin.html">Médecins</a></li>
+            <li><a href="affichageUsager.html">Usagers</a></li>
+            <li class="deconnexion"><a href="/session/deconnexion.php">Déconnexion ►</a></li>
+        </ul>
+    </nav>    
+    
+    <h1>Liste des Usagers</h1>
+    <!-- Afficher tous les usagers -->
+    <div class="form-group">
+        <button id="getAllUsagers">Afficher tous les usagers</button>
+        <div class="info-response" id="infoGetAllUsagers"></div>
+    </div>
+    
+    <!-- Afficher un usager spécifique -->
+    <div class="form-group">
+        <label for="usagerID">ID de l'usager :</label>
+        <input type="text" id="usagerID" placeholder="Entrez l'ID de l'usager">
+        <button id="getUsager">Afficher l'usager</button>
+        <div class="info-response" id="infoGetUsager"></div>
+    </div>
+    
+    <!-- Ajouter un nouvel usager -->
+    <h2>Ajouter un nouvel usager</h2>
+    <div class="form-group">
+        <label for="newUsagerCivilite">Civilité :</label>
+        <input type="text" id="newUsagerCivilite" placeholder="Entrez la civilité de l'usager">
+        <label for="newUsagerNom">Nom :</label>
+        <input type="text" id="newUsagerNom" placeholder="Entrez le nom de l'usager">
+        <label for="newUsagerPrenom">Prénom :</label>
+        <input type="text" id="newUsagerPrenom" placeholder="Entrez le prénom de l'usager">
+        <label for="newUsagerSexe">Sexe :</label>
+        <input type="text" id="newUsagerSexe" placeholder="Entrez le sexe de l'usager">
+        <label for="newUsagerAdresse">Adresse :</label>
+        <input type="text" id="newUsagerAdresse" placeholder="Entrez l'adresse de l'usager">
+        <label for="newUsagerVille">Ville :</label>
+        <input type="text" id="newUsagerVille" placeholder="Entrez la ville de l'usager">
+        <label for="newUsagerCodePostal">Code postal :</label>
+        <input type="text" id="newUsagerCodePostal" placeholder="Entrez le code postal de l'usager">
+        <label for="newUsagerDateNaissance">Date de naissance :</label>
+        <input type="text" id="newUsagerDateNaissance" placeholder="Entrez la date de naissance de l'usager">
+        <label for="newUsagerLieuNaissance">Lieu de naissance :</label>
+        <input type="text" id="newUsagerLieuNaissance" placeholder="Entrez le lieu de naissance de l'usager">
+        <label for="newUsagerNumSecu">Numéro de sécurité sociale :</label>
+        <input type="text" id="newUsagerNumSecu" placeholder="Entrez le numéro de sécurité sociale de l'usager">
+        <label for="newUsagerMedecinReferent">Médecin référent :</label>
+        <input type="text" id="newUsagerMedecinReferent" placeholder="Entrez le médecin référent de l'usager">
+        <button id="addUsager">Ajouter</button>
+        <div class="info-response" id="infoAddUsager"></div>
+    </div>
+    
+    <!-- Mettre à jour un usager -->
+    <h2>Mettre à jour un usager</h2>
+    <div class="form-group">
+        <label for="updateUsagerID">ID de l'usager à modifier :</label>
+        <input type="text" id="updateUsagerID" placeholder="Entrez l'ID de l'usager à modifier">
+        <label for="updateUsagerCivilite">Nouvelle civilité :</label>
+        <input type="text" id="updateUsagerCivilite" placeholder="Entrez la nouvelle civilité de l'usager">
+        <label for="updateUsagerNom">Nouveau nom :</label>
+        <input type="text" id="updateUsagerNom" placeholder="Entrez le nouveau nom de l'usager">
+        <label for="updateUsagerPrenom">Nouveau prénom :</label>
+        <input type="text" id="updateUsagerPrenom" placeholder="Entrez le nouveau prénom de l'usager">
+        <label for="updateUsagerSexe">Nouveau sexe :</label>
+        <input type="text" id="updateUsagerSexe" placeholder="Entrez le nouveau sexe de l'usager">
+        <label for="updateUsagerAdresse">Nouvelle adresse :</label>
+        <input type="text" id="updateUsagerAdresse" placeholder="Entrez la nouvelle adresse de l'usager">
+        <label for="updateUsagerVille">Nouvelle ville :</label>
+        <input type="text" id="updateUsagerVille" placeholder="Entrez la nouvelle ville de l'usager">
+        <label for="updateUsagerCodePostal">Nouveau code postal :</label>
+        <input type="text" id="updateUsagerCodePostal" placeholder="Entrez le nouveau code postal de l'usager">
+        <label for="updateUsagerDateNaissance">Nouvelle date de naissance :</label>
+        <input type="text" id="updateUsagerDateNaissance" placeholder="Entrez la nouvelle date de naissance de l'usager">
+        <label for="updateUsagerLieuNaissance">Nouveau lieu de naissance :</label>
+        <input type="text" id="updateUsagerLieuNaissance" placeholder="Entrez le nouveau lieu de naissance de l'usager">
+        <label for="updateUsagerNumSecu">Nouveau numéro de sécurité sociale :</label>
+        <input type="text" id="updateUsagerNumSecu" placeholder="Entrez le nouveau numéro de sécurité sociale de l'usager">
+        <label for="updateUsagerMedecinReferent">Nouveau médecin référent :</label>
+        <input type="text" id="updateUsagerMedecinReferent" placeholder="Entrez le nouveau médecin référent de l'usager">
+
+        <!-- Boutons radio pour la sélection de la méthode de mise à jour (PATCH / PUT) -->
+        <div>
+            <input type="radio" id="methodPatch" name="updateMethod" value="PATCH" checked>
+            <label for="methodPatch">PATCH (mise à jour partielle)</label>
+        </div>
+        <div>
+            <input type="radio" id="methodPut" name="updateMethod" value="PUT">
+            <label for="methodPut">PUT (mise à jour totale)</label>
+        </div>
+
+        <!-- Bouton pour mettre à jour l'usager -->
+        <button id="updateUsager">Modifier</button>
+        <div class="info-response" id="infoUpdateUsager"></div>
+    </div>
+
+
+    <!-- Supprimer un usager -->
+    <h2>Supprimer un usager</h2>
+    <div class="form-group">
+        <label for="deleteUsagerID">ID de l'usager à supprimer :</label>
+        <input type="text" id="deleteUsagerID" placeholder="Entrez l'ID de l'usager à supprimer">
+        <button id="deleteUsager">Supprimer</button>
+        <div class="info-response" id="infoDeleteUsager"></div>
+    </div>
+    
+    <!-- Zone pour l'affichage des réponses de l'API -->
+    <h2>RÉPONSES DE L'API</h2>
+    
+    <div class="response" id="apiResponse" style="display: none;">
+        <table>
+            <caption>Liste des Usagers</caption>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Civilité</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Sexe</th>
+                <th>Adresse</th>
+                <th>Ville</th>
+                <th>Code Postal</th>
+                <th>Date de Naissance</th>
+                <th>Lieu de Naissance</th>
+                <th>Numéro de Sécurité Sociale</th>
+                <th>Médecin Référent</th>
+            </tr>
+            </thead>
+            <tbody id="responseTableBody">
+                <!-- Les lignes du tableau seront ajoutées ici via JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <!-- Script JavaScript pour les interactions avec l'API -->
+    <script src="scriptUsager.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+/* Styles spécifiques à la page d'accueil */
+
+/* Conteneur principal de la page d'accueil */
+.index-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour le titre principal de la page */
+.index-container h1 {
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Styles pour les paragraphes de texte */
+.index-container p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Styles pour les éléments en gras dans le texte */
+.index-container strong {
+    color: #0097b2;
+}
+
+/* Styles pour la liste à puces */
+.index-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+/* Styles pour les éléments de la liste à puces */
+.index-container ul li {
+    background-color: #0097b2;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+/* Styles pour les boutons de soumission du formulaire */
+.index-container input[type="submit"] {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Effet de survol pour les boutons de soumission */
+.index-container input[type="submit"]:hover {
+    background-color: #c0392b;
+}
+
+/* Styles pour le conteneur de l'image à droite du texte */
+.index-container .image-container {
+    text-align: right; /* Aligner le texte à droite */
+}
+
+/* Styles pour l'image dans le conteneur */
+.index-container .image-container img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+section {
+    width: 500px;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Médecins</title>
+    <link rel="stylesheet" type="text/css" href="/styles_css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/styles_css/menu.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul id="menu">
+            <li><a href="../index.html"><img src="/image/logo_projet-php.png" alt="Logo Projet PHP" width="125" height="125"></a></li>
+            <li><a href="affichageStatistiques.html">Statistiques</a></li>
+            <li><a href="affichageRendezVous.html">Rendez-vous</a></li>
+            <li><a href="affichageMedecin.html">Médecins</a></li>
+            <li><a href="affichageUsager.html">Usagers</a></li>
+            <li class="deconnexion"><a href="/session/deconnexion.php">Déconnexion ►</a></li>
+        </ul>
+    </nav>    
+    
+    <h1>Liste des Médecins</h1>
+    <!-- Afficher toutes les médecins -->
+    <div class="form-group">
+        <button id="getAllMedecins">Afficher toutes les médecins</button>
+        <div class="info-response" id="infoGetAllMedecins"></div>
+    </div>
+    
+    <!-- Afficher un médecin spécifique -->
+    <div class="form-group">
+        <label for="medecinID">ID du médecin :</label>
+        <input type="text" id="medecinID" placeholder="Entrez l'ID du médecin">
+        <button id="getMedecin">Afficher le médecin</button>
+        <div class="info-response" id="infoGetMedecin"></div>
+    </div>
+    
+    <!-- Ajouter un nouveau médecin -->
+    <h2>Ajouter un nouveau médecin</h2>
+    <div class="form-group">
+        <label for="newMedecin">Nouveau médecin :</label>
+        <input type="text" id="newMedecin" placeholder="Entrez le nom du nouveau médecin">
+        <label for="newPrenomMedecin">Prénom :</label>
+        <input type="text" id="newPrenomMedecin" placeholder="Entrez le prénom du nouveau médecin">
+        <label for="newCiviliteMedecin">Civilité :</label>
+        <input type="text" id="newCiviliteMedecin" placeholder="Entrez la civilité du nouveau médecin">
+        <!-- Ajoutez d'autres champs si nécessaire -->
+        <button id="addMedecin">Ajouter</button>
+        <div class="info-response" id="infoAddMedecin"></div>
+    </div>
+    
+   <!-- Mise à jour d'un médecin -->
+   <h2>Mettre à jour un médecin</h2>
+   <div class="form-group">
+    <label for="updateMedecinID">ID du médecin à modifier :</label>
+    <input type="text" id="updateMedecinID" placeholder="Entrez l'ID du médecin à modifier">
+    <label for="updateNomMedecin">Nouveau nom :</label>
+    <input type="text" id="updateNomMedecin" placeholder="Entrez le nouveau nom du médecin">
+    <label for="updatePrenomMedecin">Nouveau prénom :</label>
+    <input type="text" id="updatePrenomMedecin" placeholder="Entrez le nouveau prénom du médecin">
+    <label for="updateCiviliteMedecin">Nouvelle civilité :</label>
+    <input type="text" id="updateCiviliteMedecin" placeholder="Entrez la nouvelle civilité du médecin">
+
+    <!-- Boutons radio pour la sélection de la méthode de mise à jour (PATCH / PUT) -->
+    <div>
+        <input type="radio" id="methodPatch" name="updateMethod" value="PATCH" checked>
+        <label for="methodPatch">PATCH (mise à jour partielle)</label>
+    </div>
+    <div>
+        <input type="radio" id="methodPut" name="updateMethod" value="PUT">
+        <label for="methodPut">PUT (mise à jour totale)</label>
+    </div>
+    <button id="updateMedecin">Modifier le médecin</button>
+    <div class="info-response" id="infoUpdateMedecin"></div>
+</div>
+
+    <!-- Supprimer un médecin -->
+    <h2>Supprimer un médecin</h2>
+    <div class="form-group">
+        <label for="deleteMedecinID">ID du médecin à supprimer :</label>
+        <input type="text" id="deleteMedecinID" placeholder="Entrez l'ID du médecin à supprimer">
+        <button id="deleteMedecin">Supprimer le médecin</button>
+        <div class="info-response" id="infoDeleteMedecin"></div>
+    </div>
+    
+    <!-- Zone pour l'affichage des réponses de l'API -->
+    <h2>RÉPONSES DE L'API</h2>
+    <div class="response" id="apiResponse" style="display: none;">
+        <table>
+            <caption>Liste des Médecins</caption>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Civilité</th>
+            </tr>
+            </thead>
+            <tbody id="responseTableBody">
+                <!-- Les lignes du tableau seront ajoutées ici via JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <!-- Script JavaScript pour les interactions avec l'API -->
+    <script src="scriptMedecin.js"></script>
+</body>
+</html>

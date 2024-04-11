@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Consultations</title>
+    <link rel="stylesheet" type="text/css" href="/styles_css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/styles_css/menu.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul id="menu">
+            <li><a href="../index.html"><img src="/image/logo_projet-php.png" alt="Logo Projet PHP" width="125" height="125"></a></li>
+            <li><a href="affichageStatistiques.html">Statistiques</a></li>
+            <li><a href="affichageRendezVous.html">Rendez-vous</a></li>
+            <li><a href="affichageMedecin.html">Médecins</a></li>
+            <li><a href="affichageUsager.html">Usagers</a></li>
+            <li class="deconnexion"><a href="/session/deconnexion.php">Déconnexion ►</a></li>
+        </ul>
+    </nav>
+
+    <h1>Liste des Consultations</h1>
+    <ul id="consultationList"></ul>
+
+    <!-- Afficher toutes les consultations -->
+    <div class="form-group">
+        <button id="getAllConsultations">Afficher toutes les consultations</button>
+        <div class="info-response" id="infoGetAllConsultations"></div>
+    </div>
+    
+    <!-- Afficher une consultation spécifique -->
+    <div class="form-group">
+        <label for="consultationID">ID de la consultation :</label>
+        <input type="text" id="consultationID" placeholder="Entrez l'ID de la consultation">
+        <button id="getConsultation">Afficher la consultation</button>
+        <div class="info-response" id="infoGetConsultation"></div>
+    </div>
+    
+    <!-- Ajouter une nouvelle consultation -->
+    <h2>Ajouter une nouvelle consultation</h2>
+    <form id="newConsultationForm">
+        <label for="usagerId">ID de l'usager :</label>
+        <input type="text" id="usagerId" name="usagerId"><br>
+
+        <label for="medecinId">ID du médecin :</label>
+        <input type="text" id="medecinId" name="medecinId"><br>
+
+        <label for="date">Date de la consultation :</label>
+        <input type="date" id="date" name="date"><br>
+
+        <label for="heure">Heure de la consultation :</label>
+        <input type="time" id="heure" name="heure"><br>
+
+        <label for="duree">Durée de la consultation (en minutes) :</label>
+        <input type="number" id="duree" name="duree"><br>
+
+        <button id="addConsultation">Ajouter la consultation</button>
+    </form>
+
+    <!-- Mise à jour d'une consultation -->
+    <h2>Mettre à jour une consultation</h2>
+    <form id="updateConsultationForm">
+        <label for="updateConsultationId">ID de la consultation à modifier :</label>
+        <input type="text" id="updateConsultationId" name="updateConsultationId"><br>
+        
+        <label for="updateUsagerId">Nouvel ID de l'usager :</label>
+        <input type="text" id="updateUsagerId" name="updateUsagerId"><br>
+
+        <label for="updateMedecinId">Nouvel ID du médecin :</label>
+        <input type="text" id="updateMedecinId" name="updateMedecinId"><br>
+
+        <label for="updateDate">Nouvelle date de la consultation :</label>
+        <input type="date" id="updateDate" name="updateDate"><br>
+
+        <label for="updateHeure">Nouvelle heure de la consultation :</label>
+        <input type="time" id="updateHeure" name="updateHeure"><br>
+
+        <label for="updateDuree">Nouvelle durée de la consultation (en minutes) :</label>
+        <input type="number" id="updateDuree" name="updateDuree"><br>
+
+        <!-- Boutons radio pour la sélection de la méthode de mise à jour (PATCH / PUT) -->
+        <div>
+            <input type="radio" id="methodPatch" name="updateMethod" value="PATCH" checked>
+            <label for="methodPatch">PATCH (mise à jour partielle)</label>
+        </div>
+        <div>
+            <input type="radio" id="methodPut" name="updateMethod" value="PUT">
+            <label for="methodPut">PUT (mise à jour totale)</label>
+        </div>
+        <button id="updateConsultation">Mettre à jour la consultation</button>
+        <div class="info-response" id="infoUpdateConsultation"></div>
+    </form>
+
+    <!-- Supprimer une consultation -->
+    <h2>Supprimer une consultation</h2>
+    <form id="deleteConsultationForm">
+        <label for="deleteConsultationId">ID de la consultation à supprimer :</label>
+        <input type="text" id="deleteConsultationId" name="deleteConsultationId"><br>
+        
+        <button id="deleteConsultation">Supprimer la consultation</button>
+    </form>
+
+    <!-- Zone pour l'affichage des réponses de l'API -->
+    <h2>RÉPONSES DE L'API</h2>
+    <div class="response" id="apiResponse" style="display: none;">
+        <table>
+            <caption>Liste des Consultations</caption>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Usager</th>
+                <th>Médecin</th>
+                <th>Date</th>
+                <th>Heure</th>
+                <th>Durée</th>
+            </tr>
+            </thead>
+            <tbody id="responseTableBody">
+                <!-- Les lignes du tableau seront ajoutées ici via JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Script JavaScript pour les interactions avec l'API -->
+    <script src="scriptConsultation.js"></script>
+</body>
+</html>

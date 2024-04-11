@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Consultations</title>
+    <link rel="stylesheet" type="text/css" href="/styles_css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/styles_css/menu.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul id="menu">
+            <li><a href="../index.html"><img src="/image/logo_projet-php.png" alt="Logo Projet PHP" width="125" height="125"></a></li>
+            <li><a href="affichageStatistiques.html">Statistiques</a></li>
+            <li><a href="affichageRendezVous.html">Rendez-vous</a></li>
+            <li><a href="affichageMedecin.html">Médecins</a></li>
+            <li><a href="affichageUsager.html">Usagers</a></li>
+            <li class="deconnexion"><a href="/session/deconnexion.php">Déconnexion ►</a></li>
+        </ul>
+    </nav>
+
+    <h1>Statistiques</h1>
+
+    <p>Vous pouvez consulter les statistiques suivantes :</p>
+    <ul>
+        <li>Part des femmes et des hommes parmi les patients ayant plus ou moins de 25 ans.</li>
+    </ul><br>
+    <button onclick="afficherStatistiquesPatients()">Statistiques Patients</button>
+    <ul>
+        <li>Durée totale des consultations de chaque médecin.</li>
+    </ul><br>
+    <button onclick="afficherSta
+    tistiquesMedecins()">Statistiques Médecins</button>
+
+    <h2>RÉPONSES DE L'API</h2>
+
+    <!-- Script JavaScript pour les interactions avec l'API -->
+    <script src="scriptStatistique.js"></script>
+</body>
+</html>
